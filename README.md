@@ -61,7 +61,7 @@ The influence of climatic parameters and extreme climatic events in the health o
 
 ### Pearson correlation
 
-Pearson correlation was used to analyse the correlation between month medians. The level of significance was 5%. This analysis is available at:
+Pearson correlation [Rodgers e Nicewander 1988] was used to analyse the correlation between month medians. The level of significance was 5%. This analysis is available at:
 
 - [TR 02/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_02_2021_Correlations_between_circulatory_hospitalizations_and_climatic_variables.ipynb): Pearson correlation between climatic variables and hospitalizations
 
@@ -90,7 +90,7 @@ Pearson correlation was used to analyse the correlation between month medians. T
 
 ### Rate ratios
 
-Rate ratio is a relative difference measure used to compare the incidence rates of events occurring at any given point in time, frequently used in epidemiology. Rate ratios from days under extreme events effect and control days were compared. A rate ratio above 1.0 indicates an increased risk associated with that event. The analysis was conducted for the total data and for some stratifications (sex, age, age and sex, race) and is available at:
+Rate ratio is a relative difference measure used to compare the incidence rates of events occurring at any given point in time, frequently used in epidemiology. Rate ratios from days under extreme events effect and control days were compared. A rate ratio above 1.0 indicates an increased risk associated with that event [CDC]. The analysis was conducted for the total data and for some stratifications (sex, age, age and sex, race) and is available at:
 
 - [TR 04/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_04_2021_Rate_ratio_for_circulatory_hospitalizations_and_extreme_events.ipynb): Rate ratio for extreme climatic events and hospitalizations
 
@@ -122,7 +122,7 @@ Rate ratio is a relative difference measure used to compare the incidence rates 
 
 ### Mann-Whitney U
 
-Mann-Whitney U is a nonparametric test used to compare two distributions. The test was used to compare the distributions of hospitalizations/deaths between under extreme events effect and control days. The analysis was conducted for the total data and for some stratifications (sex, age, age and sex, race) and is available at:
+Mann-Whitney U is a nonparametric test used to compare two distributions s [MacFarland e Yates 2016]. The test was used to compare the distributions of hospitalizations/deaths between under extreme events effect and control days. The analysis was conducted for the total data and for some stratifications (sex, age, age and sex, race) and is available at:
 
 - [TR 06/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_06_2021_Mann_Whitney_U_test_for_circulatory_hospitalizations_and_extreme_climatic_events_.ipynb): Mann-Whitney U test for extreme climatic events and hospitalizations
 - [TR 07/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_07_2021_Mann_Whitney_U_test_for_circulatory_deaths_and_extreme_climatic_events.ipynb): Mann-Whitney U test for extreme climatic events and deaths
@@ -153,16 +153,22 @@ Trend analysis for low humidity waves
 
 CAMPBELL-LENDRUM, D.; CORVALÁN, C.; PRÜSS–USTÜN, A. How much diseasecould climate change cause? In:Climate change and human health: risks and responses.[S.l.]: Geneva, World Health Organization, 2003. cap. 7.
 
+CENTERS FOR DISEASE CONTROL AND PREVENTION (CDC).Principles ofEpidemiology in Public Health Practice, Third Edition An Introduction to AppliedEpidemiology and Biostatistics. Available at: <https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section5.html>. Access date: mar 2021.
+
 COUNCIL, N. R. et al.Advancing the science of climate change. [S.l.]: National AcademiesPress, 2011.
 
-GEIRINHAS, J. L. et al. Climatic and synoptic characterization of heat waves in brazil.International Journal of Climatology, Wiley Online Library, v. 38, n. 4, p. 1760–1776, 2018
+GEIRINHAS, J. L. et al. Climatic and synoptic characterization of heat waves in brazil.International Journal of Climatology, Wiley Online Library, v. 38, n. 4, p. 1760–1776, 2018.
 
-MCMICHAEL, A. Global climate change and health: an old story writ large. In:Climatechange and human health: risks and responses. [S.l.]: Geneva, World Health Organization,2003. cap. 1
+MACFARLAND, T. W.; YATES, J. M. Mann–whitney u test. In:Introduction tononparametric statistics for the biological sciences using R. [S.l.]: Springer, 2016. p. 103–132.
+
+MCMICHAEL, A. Global climate change and health: an old story writ large. In:Climatechange and human health: risks and responses. [S.l.]: Geneva, World Health Organization,2003. cap. 1.
 
 MURRAY, C. J. et al. Global burden of 87 risk factors in 204 countries and territories,1990–2019: a systematic analysis for the Global Burden of Disease Study 2019.The Lancet,Elsevier, v. 396, n. 10258, p. 1223–1249, 2020.
+
+RODGERS, J. L.; NICEWANDER, W. A. Thirteen ways to look at the correlationcoefficient.The American Statistician, Taylor & Francis Group, v. 42, n. 1, p. 59–66, 1988.
 
 SENEVIRATNE, S. et al. Changes in climate extremes and their impacts on the naturalphysical environment. 2012.
 
 WORLD HEALTH ORGANIZATION(WHO). (1993). The ICD-10 classification of mental and behavioural disorders. World Health Organization.
 
-WORLD HEALTH ORGANIZATION.Cardiovascular diseases (CVDs). Available at:<https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)>. Access date: 26 april 2020
+WORLD HEALTH ORGANIZATION.Cardiovascular diseases (CVDs). Available at:<https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)>. Access date: 26 april 2020.
