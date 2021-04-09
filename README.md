@@ -63,7 +63,7 @@ The influence of climatic parameters and extreme climatic events in the health o
 
 Pearson correlation [Rodgers e Nicewander 1988] was used to analyse the correlation between month medians. The level of significance was 5%. This analysis is available at:
 
-- [TR 02/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_02_2021_Correlations_between_circulatory_hospitalizations_and_climatic_variables.ipynb): Pearson correlation between climatic variables and hospitalizations
+- [TR 02/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_02_2021_Correlations_between_cardiovascular_hospitalizations_and_climatic_variables.ipynb): Pearson correlation between climatic variables and hospitalizations
 
 |Climatic variable| Pearson coefficient| p value| Correlation|
 |----------|----------|---------- |---------- |
@@ -76,7 +76,7 @@ Pearson correlation [Rodgers e Nicewander 1988] was used to analyse the correlat
 |Humidity range(%) |0.54 |  0.0708 |     - |
 
 
-- [TR 03/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_03_2021_Correlations_between_circulatory_deaths_and_climatic_variables.ipynb): Pearson correlation between climatic variables and deaths
+- [TR 03/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_03_2021_Correlations_between_cardiovascular_deaths_and_climatic_variables.ipynb): Pearson correlation between climatic variables and deaths
 
 |Climatic variable| Pearson coefficient| p value| Correlation|
 |----------|----------|---------- |---------- |
@@ -92,7 +92,7 @@ Pearson correlation [Rodgers e Nicewander 1988] was used to analyse the correlat
 
 Rate ratio is a relative difference measure used to compare the incidence rates of events occurring at any given point in time, frequently used in epidemiology. Rate ratios from days under extreme events effect and control days were compared. A rate ratio above 1.0 indicates an increased risk associated with that event [CDC]. The analysis was conducted for the total data and for some stratifications (sex, age, age and sex, race) and is available at:
 
-- [TR 04/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_04_2021_Rate_ratio_for_circulatory_hospitalizations_and_extreme_events.ipynb): Rate ratio for extreme climatic events and hospitalizations
+- [TR 04/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_04_2021_Rate_ratio_for_cardiovascular_hospitalizations_and_extreme_events.ipynb): Rate ratio for extreme climatic events and hospitalizations
 
 |Event| Rate ratio| Confidence interval|
 |------|-----------|----------|
@@ -106,7 +106,7 @@ Rate ratio is a relative difference measure used to compare the incidence rates 
 |Extreme humidity range | **1.01** | 0.96 - 1.07  |
 |Extreme difference of humidity between days | 0.96 | 0.81 - 1.13|
 
-- [TR 05/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_05_2021_Rate_ratio_for_circulatory_deaths_and_extreme_events.ipynb): Rate ratio for extreme climatic events and deaths
+- [TR 05/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_05_2021_Rate_ratio_for_cardiovascular_deaths_and_extreme_events.ipynb): Rate ratio for extreme climatic events and deaths
 
 |Event| Rate ratio| Confidence interval|
 |------|-----------|----------|
@@ -124,8 +124,8 @@ Rate ratio is a relative difference measure used to compare the incidence rates 
 
 Mann-Whitney U is a nonparametric test used to compare two distributions s [MacFarland e Yates 2016]. The test was used to compare the distributions of hospitalizations/deaths between under extreme events effect and control days. The analysis was conducted for the total data and for some stratifications (sex, age, age and sex, race) and is available at:
 
-- [TR 06/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_06_2021_Mann_Whitney_U_test_for_circulatory_hospitalizations_and_extreme_climatic_events_.ipynb): Mann-Whitney U test for extreme climatic events and hospitalizations
-- [TR 07/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_07_2021_Mann_Whitney_U_test_for_circulatory_deaths_and_extreme_climatic_events.ipynb): Mann-Whitney U test for extreme climatic events and deaths
+- [TR 06/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_06_2021_Mann_Whitney_U_test_for_cardiovascular_hospitalizations_and_extreme_climatic_events_.ipynb): Mann-Whitney U test for extreme climatic events and hospitalizations
+- [TR 07/2021](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_07_2021_Mann_Whitney_U_test_for_cardiovascular_deaths_and_extreme_climatic_events.ipynb): Mann-Whitney U test for extreme climatic events and deaths
 
 Women and elderly were the most affect by the extreme climatic events.
 
