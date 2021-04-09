@@ -26,7 +26,7 @@ More information about the health data and its preprocessing can be found at the
 
 ## Extreme climatic events
 
-A library of functions was developed to identify and compute the metrics of extreme climatic events is disponibilizes at [py-climate-health-toolbox](https://github.com/climate-and-health-datasci-Unicamp/py-climate-health-toolbox). The definition of these events is based on Geirinhas methodology.
+A library of functions was developed to identify and compute the metrics of extreme climatic events is disponibilizes at [py-climate-health-toolbox](https://github.com/climate-and-health-datasci-Unicamp/py-climate-health-toolbox). The definition of these events is based on Geirinhas et al. 2018 methodology.
 
 The analysed extreme events were:
 
@@ -154,6 +154,8 @@ Trend analysis for low humidity waves
 CAMPBELL-LENDRUM, D.; CORVALÁN, C.; PRÜSS–USTÜN, A. How much diseasecould climate change cause? In:Climate change and human health: risks and responses.[S.l.]: Geneva, World Health Organization, 2003. cap. 7.
 
 COUNCIL, N. R. et al.Advancing the science of climate change. [S.l.]: National AcademiesPress, 2011.
+
+GEIRINHAS, J. L. et al. Climatic and synoptic characterization of heat waves in brazil.International Journal of Climatology, Wiley Online Library, v. 38, n. 4, p. 1760–1776, 2018
 
 MCMICHAEL, A. Global climate change and health: an old story writ large. In:Climatechange and human health: risks and responses. [S.l.]: Geneva, World Health Organization,2003. cap. 1
 
