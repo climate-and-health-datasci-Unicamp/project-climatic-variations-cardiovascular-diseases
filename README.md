@@ -18,8 +18,8 @@ All databases used in this project were collected in the FAPESP project 17/20013
 
 |Database | Description|
 |----- | ----- |
-|Hospitalizations database (SSC - Health Secretary of Campinas)| Hospitalizations in Campinas from 2014 to 2018|
-|Deaths database (SSC - Health Secretary of Campinas) | Deaths that occured in Campinas from 2001 to 2019|
+|Hospitalizations database (SSC - Campinas Health Department)| Hospitalizations in Campinas from 2014 to 2018|
+|Deaths database (SSC - Campinas Health Department) | Deaths that occured in Campinas from 2001 to 2019|
 |Viracopos| Daily values of minimum and maximum temperature, mean atmospheric pressure, minimum and maximum humidity from 1983 to 2018|
 
 More information about the health data and its preprocessing can be found at the [data-health repository](https://github.com/climate-and-health-datasci-Unicamp/data-health).
