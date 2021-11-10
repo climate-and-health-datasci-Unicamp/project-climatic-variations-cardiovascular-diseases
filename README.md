@@ -127,7 +127,7 @@ Rate ratio is a relative difference measure used to compare the incidence rates 
 |**Extreme humidity range** | **1.02**  | **1.00 - 1.04**  |
 |Extreme difference of humidity between days | 0.97 | 0.94 - 1.00|
 
--[](): Rate ratio for day and night variations
+-[**TR 2021/16**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-cardiovascular-diseases/blob/main/notebooks/TR_2021_16_Technical_report_Day_and_night_variations_of_temperature_and_humidity.ipynb): Rate ratio and Mann Whitney U test for day and night variations
 
 Hospitalizations
 |Event| Rate ratio| Confidence interval|
@@ -152,7 +152,7 @@ Mann-Whitney U is a nonparametric test used to compare two distributions s [MacF
 
 In a case-crossover study design, each person serves as his own control. The period immediately before the adverse outcome (death or hospitalization) is then compared with a period when no adverseoutcome occurred [L Gordis, 2013]. The IRR were estimated using a logistic regression.
 
--[](): IRR for hospitalizations
+-[**TR 2021/17**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-cardiovascular-diseases/blob/main/notebooks/TR_2021_17_Technical_report_Case_crossover_for_cardiovascular_hospitalizations_and_extreme_events.ipynb): IRR for hospitalizations
 |Event| IRR | Confidence interval|
 |------|-----------|----------|
 |Extreme thermal range | 0.88 | 0.83 - 0.93|
@@ -165,7 +165,7 @@ In a case-crossover study design, each person serves as his own control. The per
 |Extreme humidity range | 0.93| 0.89 - 0.98 |
 |Extreme difference of humidity between days | **1.01** | 0.91 - 1.12|
 
--[](): IRR for deaths
+-[**TR 2021/18**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-cardiovascular-diseases/blob/main/notebooks/TR_2021_18_Technical_report_Case_crossover_for_cardiovascular_deaths_and_extreme_events.ipynb): IRR for deaths
 |Event| IRR | Confidence interval|
 |------|-----------|----------|
 |Extreme thermal range | 1.00 | 0.97 - 1.03|
@@ -182,7 +182,7 @@ In a case-crossover study design, each person serves as his own control. The per
 
 A generalized poisson regression was used to estimate the relative risk associated with each extreme event [Consul,1989].
 
--[](): RR for hospitalizations
+-[**TR 2021/19](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-cardiovascular-diseases/blob/main/notebooks/TR_2021_19_Technical_report_Poisson_regression_for_cardiovascular_hospitalizations_and_extreme_events.ipynb): RR for hospitalizations
 |Event| RR | Confidence interval|
 |------|-----------|----------|
 |Extreme thermal range | 0.95 | 0.88 - 1.04|
@@ -195,7 +195,7 @@ A generalized poisson regression was used to estimate the relative risk associat
 |Extreme humidity range | 1.00 | 0.95 - 1.07 |
 |Extreme difference of humidity between days | **1.05** | 0.88 - 1.26|
 
--[](): RR for deaths
+-[**TR 2021/20**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-cardiovascular-diseases/blob/main/notebooks/TR_2021_20_Technical_report_Poisson_regression_for_cardiovascular_deaths_and_extreme_events.ipynb): RR for deaths
 |Event| RR | Confidence interval|
 |------|-----------|----------|
 |Extreme thermal range | 0.99 | 0.97 - 1.02|
