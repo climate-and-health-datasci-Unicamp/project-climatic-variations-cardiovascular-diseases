@@ -21,6 +21,9 @@ All databases used in this project were collected in the FAPESP project 17/20013
 |Hospitalizations database (SSC - Campinas Health Department)| Hospitalizations in Campinas from 2014 to 2018|
 |Deaths database (SSC - Campinas Health Department) | Deaths that occured in Campinas from 2001 to 2019|
 |Viracopos| Daily values of minimum and maximum temperature, mean atmospheric pressure, minimum and maximum humidity from 1983 to 2018|
+|CEPAGRI| Temperature and humidity every 10 minutes from 1997 to 2018|
+
+There were inconsistences and gaps in the first months of 2017 for the Viracopos  humidity data. A linear regression using CEPAGRI data was perfomed to fill this data. The code for this is available at [].
 
 More information about the health data and its preprocessing can be found at the [data-health repository](https://github.com/climate-and-health-datasci-Unicamp/data-health).
 
@@ -49,15 +52,21 @@ Occurence of extreme events in Campinas between 2001 and 2018
 |Extreme difference of temperature between days | 84 | 84  | -  |
 |Low pressure waves | 65 | 261 | 8 |
 |High pressure waves | 93 | 399 | 10 |
-|Diferença extrema de pressão entre dias | 610 | 610 |  - |
-|Low humidity waves | 35 | 160 | 16 |
+|Diferença extrema de pressão entre dias | 611 | 611 |  - |
+|Low humidity waves | 37 | 168 | 16 |
 |High humidity waves | 43 | 151 | 6 |
-|Extreme humidity range | 900 | 900  | - |
-|Extreme difference of humidity between days | 77 | 77  | -  |
+|Extreme humidity range | 915 | 915  | - |
+|Extreme difference of humidity between days | 79 | 79  | -  |
+
+##Day and night variation
+
+Days with a small variation between day and night were hypothesized as disruptive of the biologicalrhythms and potentially dangerous to human health. We created two events to evaluate differences in temperature and humidity during day and night, using a similar methodology to the one described above. We compared the temperature and humidity differences between dawn (00h-6h), coldest and more humid period, with the ones from the afternoon (12h-18h), hottes and drier. The event was defined as days with the differences below the 10th.
+
+From 2001 to 2018, they were 660 days with temperature variation between day and night belowthe 10th percentile. For humidity, there were 620 days.
 
 ## Association study
 
-The influence of climatic parameters and extreme climatic events in the health of the population of Campinas was analysed using the Pearson correlations, comparing rate ratios and with the Mann-Whitney U test.
+The influence of climatic parameters and extreme climatic events in the health of the population of Campinas we used different methodologies: Pearson correlations, Rate Ratios, Mann-Whitney U test, case cross-over design to evaluate incidence rate ratios, Poisson regression to evaluate relative risk.
 
 ### Pearson correlation
 
@@ -67,26 +76,24 @@ Pearson correlation [Rodgers e Nicewander 1988] was used to analyse the correlat
 
 |Climatic variable| Pearson coefficient| p value| Correlation|
 |----------|----------|---------- |---------- |
-|Minimum temperature(°C) |-0.73 |  0.0069 |  strong |
-|Maximum temperature(°C) | -0.55 |  0.0627 |  -    |
-|Thermal range (°C) |0.58 |  0.0458 |   moderate |
-|Mean atmospheric pressure (HPA)| 0.76 |  0.0045 | strong |
-|Minimum humidity(%) | -0.49 |  0.1037 |    - |
-|Maximum humidity(%) | -0.34 |  0.2829 |  - |
-|Humidity range(%) |0.54 |  0.0708 |     - |
-
+|Minimum temperature(°C) |-0.58 |  0.0492 |  moderate |
+|Maximum temperature(°C) | -0.48 |  0.1147 |  -    |
+|Thermal range (°C) |0.50 |  0.0980 |   - |
+|Mean atmospheric pressure (HPA)| 0.59 |  0.0417 | moderate |
+|Minimum humidity(%) | -0.31 |  0.3297 |    - |
+|Maximum humidity(%) | -0.26 |  0.4161 |  - |
+|Humidity range(%) |0.24 |  0.4595 |     - |
 
 - [**TR 2021/03**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_2021_03_Correlations_between_cardiovascular_deaths_and_climatic_variables.ipynb): Pearson correlation between climatic variables and deaths
-
 |Climatic variable| Pearson coefficient| p value| Correlation|
 |----------|----------|---------- |---------- |
-|Minimum temperature(°C) |  -0.91 |  0.0000  | very strong|
-|Maximum temperature(°C) |   -0.76 |  0.0039 |  strong|
-|Thermal range (°C) |   0.88 |  0.0002 |    strong |
-|Mean atmospheric pressure (HPA) |   0.84 |  0.0006 | strong|
-|Minimum humidity(%) |   -0.87 |  0.0002 | strong|
-|Maximum humidity(%) |    -0.81 |  0.0014 | strong|
-|Humidity range(%) |  0.88 |  0.0001 | strong|
+|Minimum temperature(°C) |  -0.93 |  <0.0001  | very strong|
+|Maximum temperature(°C) |   -0.86 |  0.0003 |  strong|
+|Thermal range (°C) |   0.71 |  0.0094 |    strong |
+|Mean atmospheric pressure (HPA) |   0.90 |  0.0001 | strong|
+|Minimum humidity(%) |   -0.74 |  0.0062 | strong|
+|Maximum humidity(%) |    -0.6 |  0.0384 | moderate|
+|Humidity range(%) |  0.71 |  0.0091 | strong|
 
 ### Rate ratios
 
@@ -100,11 +107,11 @@ Rate ratio is a relative difference measure used to compare the incidence rates 
 |**Extreme difference of temperature between days** | **1.16** | **1.00 - 1.35**|
 |Low pressure waves | **1.09** | 0.98 - 1.22 |
 |High pressure waves | 1.00 | 0.94 - 1.06 |
-|Diferença extrema de pressão entre dias | **1.05** | **0.99 - 1.11** |
+|Extreme difference of pressure between days| **1.05** | **0.99 - 1.11** |
 |Low humidity waves | 0.90 | 0.84 - 0.97|
 |High humidity waves | **1.05** | 0.76 - 1.45|
-|Extreme humidity range | **1.01** | 0.96 - 1.07  |
-|Extreme difference of humidity between days | 0.96 | 0.81 - 1.13|
+|Extreme humidity range | **1.01** | 0.96 - 1.08 |
+|Extreme difference of humidity between days | 0.98 | 0.92 - 1.04|
 
 - [**TR 2021/05**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-cardiovascular-diseases/blob/main/notebooks/TR_2021_05_Rate_ratio_for_cardiovascular_deaths_and_extreme_events.ipynb): Rate ratio for extreme climatic events and deaths
 
@@ -114,11 +121,25 @@ Rate ratio is a relative difference measure used to compare the incidence rates 
 |Extreme difference of temperature between days | 0.89 | 0.82 - 0.96|
 |Low pressure waves | 0.97 | 0.93 - 1.01 |
 |High pressure waves | **1.01** | 0.98 - 1.05 |
-|Diferença extrema de pressão entre dias | 1.00 | 0.97 - 1.03 |
-|**Low humidity waves** | **1.09** | **1.03 - 1.15**|
+|Extreme difference of pressure between days| 1.00 | 0.97 - 1.03 |
+|**Low humidity waves** | **1.09** | **1.04 - 1.15**|
 |High humidity waves | 0.99 | 0.94 - 1.05|
 |**Extreme humidity range** | **1.02**  | **1.00 - 1.04**  |
-|Extreme difference of humidity between days | 0.98 | 0.91 - 1.06|
+|Extreme difference of humidity between days | 0.97 | 0.94 - 1.00|
+
+-[](): Rate ratio for day and night variations
+
+Hospitalizations
+|Event| Rate ratio| Confidence interval|
+|------|-----------|----------|
+|Day and night variation of temperature | **1.02** | 0.96 - 1.08|
+|Day and night variation of humidity | 0.98| 0.92 - 1.04|
+
+Deaths
+|Event| Rate ratio| Confidence interval|
+|------|-----------|----------|
+|Day and night variation of temperature | **1.04** | **1.01 - 1.07**|
+|Day and night variation of humidity | 0.97 | 0.94 - 1.00|
 
 ### Mann-Whitney U
 
@@ -127,7 +148,65 @@ Mann-Whitney U is a nonparametric test used to compare two distributions s [MacF
 - [**TR 2021/06**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-cardiovascular-diseases/blob/main/notebooks/TR_2021_06_Mann_Whitney_U_test_for_cardiovascular_hospitalizations_and_extreme_climatic_events.ipynb): Mann-Whitney U test for extreme climatic events and hospitalizations
 - [**TR 2021/07**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-cardiovascular-diseases/blob/main/notebooks/TR_2021_07_Mann_Whitney_U_test_for_cardiovascular_deaths_and_extreme_climatic_events.ipynb): Mann-Whitney U test for extreme climatic events and deaths
 
-Women and elderly were the most affect by the extreme climatic events.
+### Case crossover
+
+In a case-crossover study design, each person serves as his own control. The period immediately before the adverse outcome (death or hospitalization) is then compared with a period when no adverseoutcome occurred [L Gordis, 2013]. The IRR were estimated using a logistic regression.
+
+-[](): IRR for hospitalizations
+|Event| IRR | Confidence interval|
+|------|-----------|----------|
+|Extreme thermal range | 0.88 | 0.83 - 0.93|
+|Extreme difference of temperature between days | **1.08** | 0.97 - 1.12|
+|Low pressure waves | **1.12** | **1.00 - 1.25** |
+|High pressure waves | **1.02** | 0.96 - 1.09 |
+|Extreme difference of pressure between days | 0.97 | 0.92 - 1.02 |
+|Low humidity waves | **1.03** | 0.95 - 1.11|
+|High humidity waves | 0.37 | 0.27 - 0.49|
+|Extreme humidity range | 0.93| 0.89 - 0.98 |
+|Extreme difference of humidity between days | **1.01** | 0.91 - 1.12|
+
+-[](): IRR for deaths
+|Event| IRR | Confidence interval|
+|------|-----------|----------|
+|Extreme thermal range | 1.00 | 0.97 - 1.03|
+|Extreme difference of temperature between days | 0.97 | 0.92 - 1.02|
+|Low pressure waves | 0.97 | 0.93 - 1.02|
+|High pressure waves | 1.00 | 0.96 - 1.03 |
+|Extreme difference of pressure between days | 0.99 | 0.96 - 1.01 |
+|Low humidity waves | **1.05** | 0.99 - 1.11|
+|High humidity waves | **1.01** | 0.96 - 1.07|
+|Extreme humidity range | 1.00 | 0.97 - 1.02|
+|Extreme difference of humidity between days | 1.00 | 0.95 - 1.05|
+
+### Poisson regression
+
+A generalized poisson regression was used to estimate the relative risk associated with each extreme event [Consul,1989].
+
+-[](): RR for hospitalizations
+|Event| RR | Confidence interval|
+|------|-----------|----------|
+|Extreme thermal range | 0.95 | 0.88 - 1.04|
+|Extreme difference of temperature between days | **1.05** | 0.88 - 1.25|
+|Low pressure waves | **1.18** | **1.04 - 1.35** |
+|High pressure waves | 0.97 | 0.89 - 1.04 |
+|Extreme difference of pressure between days  | **1.04** | 0.97 - 1.11 |
+|Low humidity waves | 0.92 | 0.85 - 0.99|
+|High humidity waves | **1.06** | 0.74 - 1.54 |
+|Extreme humidity range | 1.00 | 0.95 - 1.07 |
+|Extreme difference of humidity between days | **1.05** | 0.88 - 1.26|
+
+-[](): RR for deaths
+|Event| RR | Confidence interval|
+|------|-----------|----------|
+|Extreme thermal range | 0.99 | 0.97 - 1.02|
+|Extreme difference of temperature between days | 0.85 | 0.79 - 0.93|
+|Low pressure waves | **1.03** | 0.98 - 1.08|
+|High pressure waves | 0.95 | 0.91 - 0.99 |
+|Extreme difference of pressure between days | 0.99 | 0.96 - 1.02|
+|Low humidity waves | **1.06** | **1.00-1.12**|
+|High humidity waves | **1.01** | 0.96 - 1.07|
+|Extreme humidity range | **1.02** | 0.99 - 1.04|
+|Extreme difference of humidity between days | **1.01** | 0.93 - 1.09|
 
 ## Low humidity waves
 
@@ -155,9 +234,13 @@ CAMPBELL-LENDRUM, D.; CORVALÁN, C.; PRÜSS–USTÜN, A. How much diseasecould c
 
 CENTERS FOR DISEASE CONTROL AND PREVENTION (CDC).Principles ofEpidemiology in Public Health Practice, Third Edition An Introduction to AppliedEpidemiology and Biostatistics. Available at: <https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section5.html>. Access date: mar 2021.
 
+CONSUL, P.C., Generalized Poisson distributions: properties and applications.  M. Dekker, 1989.
+
 COUNCIL, N. R. et al.Advancing the science of climate change. [S.l.]: National AcademiesPress, 2011.
 
 GEIRINHAS, J. L. et al. Climatic and synoptic characterization of heat waves in brazil.International Journal of Climatology, Wiley Online Library, v. 38, n. 4, p. 1760–1776, 2018.
+
+GORDIS, L. , “Epidemiology, Saunders Elsevier”, Philadelphia, Pa, USA, 2013.
 
 MACFARLAND, T. W.; YATES, J. M. Mann–whitney u test. In:Introduction tononparametric statistics for the biological sciences using R. [S.l.]: Springer, 2016. p. 103–132.
 
