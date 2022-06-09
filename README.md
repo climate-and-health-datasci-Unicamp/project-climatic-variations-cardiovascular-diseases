@@ -85,6 +85,7 @@ Pearson correlation [Rodgers e Nicewander 1988] was used to analyse the correlat
 |Humidity range(%) |0.24 |  0.4595 |     - |
 
 - [**TR 2021/03**](https://github.com/climate-and-health-datasci-Unicamp/project-climatic-variations-circulatory-diseases/blob/main/notebooks/TR_2021_03_Correlations_between_cardiovascular_deaths_and_climatic_variables.ipynb): Pearson correlation between climatic variables and deaths
+
 |Climatic variable| Pearson coefficient| p value| Correlation|
 |----------|----------|---------- |---------- |
 |Minimum temperature(°C) |  -0.93 |  <0.0001  | very strong|
